@@ -42,6 +42,9 @@
       ngc = "nix-collect-garbage";
       nso = "nix-store --optmise";
       ecf = "lvim $HOME/.config/nixos-config";
+      sv = "$HOME/.local/scripts/powersave.sh";
+      eq = "$HOME/.local/scripts/equilibrado.sh";
+      pw = "$HOME/.local/scripts/performance.sh";
     };
     initExtra = ''
       export PS1='\[\e[38;5;39m\]\u\[\e[0m\]@\[\e[38;5;198m\]\h\[\e[0m\] in \[\e[38;5;44;1m\]\w\[\e[0m\] \n\[\e[38;5;28m\]\$\[\e[0m\] '
