@@ -12,5 +12,6 @@
       btop
       alacritty
       xwayland
+      gnome-software
   ];
 }
