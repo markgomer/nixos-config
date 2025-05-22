@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-  programs.firefox.enable = true;
-
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -11,7 +9,10 @@
     git
     btop
     alacritty
-    xwayland
     gnome-software
   ];
+
+  programs.firefox.enable = true;
+
+  programs.xwayland.enable = true;
 }

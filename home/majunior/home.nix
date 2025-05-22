@@ -26,7 +26,7 @@
       lutris
       heroic
       xwayland
-      kdePackages.xwaylandvideobridge
+      stow
     ];
 
     sessionVariables = {
