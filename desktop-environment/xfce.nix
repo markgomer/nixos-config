@@ -53,7 +53,6 @@
 
   programs = {
     dconf.enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
     gnupg.agent = {
       enable = true;
