@@ -10,7 +10,7 @@
   home = {
     username = "majunior";
     homeDirectory = "/home/majunior";
-    stateVersion = "24.11";
+    stateVersion = "25.11";
 
     packages = with pkgs; [
       bat
@@ -25,7 +25,6 @@
       fastfetch
       lutris
       heroic
-      xwayland
       stow
     ];
 
