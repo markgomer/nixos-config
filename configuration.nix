@@ -52,8 +52,8 @@
     xkb = {
       layout = "br";
       variant = "";
+      options = "caps:swapescape";
     };
-    xkbOptions = "caps:swapescape";
   };
 
   # Configure console keymap
