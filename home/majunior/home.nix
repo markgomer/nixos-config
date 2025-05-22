@@ -60,6 +60,13 @@
         family = "Hasklug Nerd Font Propo";
         style = "Regular";
       };
+      window = {
+        opacity = 0.9;
+        dimensions = {
+          lines = 25;
+          columns = 86;
+        };
+      };
     };
   };
 
