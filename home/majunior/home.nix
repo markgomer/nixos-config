@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./DE/xfce-home.nix
+    ./xfce-home.nix
+    # ./hyprland-home.nix
+    ./themes.nix
   ];
 
   home = {

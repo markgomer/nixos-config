@@ -1,8 +1,4 @@
-{ config, ... }:
-
-{
-  # boot.initrd.kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_drm" "i915" ];
-
+{ config, ... }: {
   boot = {
     initrd.kernelModules = [ ];
     kernelModules = [ "nvidia" "nvidia_drm" "i915" ];
@@ -29,7 +25,6 @@
     extraModprobeConfig = ''
       blacklist nouveau
     '';
-    kernelModules = [ "nvidia" "nvidia_modeset" "nvidia_drm" "i915" ];
   };
 
   hardware = {

@@ -8,7 +8,6 @@
       drawing
       elementary-xfce-icon-theme
       evince
-      firefox
       foliate
       font-manager
       file-roller
@@ -20,7 +19,6 @@
       thunderbird
       wmctrl
       xclip
-      xcolor
       xcolor
       xdg-desktop-portal-xapp
       xdo
@@ -55,10 +53,13 @@
 
   programs = {
     dconf.enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
@@ -87,17 +88,9 @@
       excludePackages = with pkgs; [
         xterm
       ];
-      displayManager = {
-        lightdm = {
-          enable = true;
-          greeters.slick = {
-            enable = true;
-            # theme.name = "Zukitre-dark";
-          };
-        };
-      };
       desktopManager.xfce.enable = true;
     };
   };
+
   xdg.portal.enable = true;
 }

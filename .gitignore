@@ -1,2 +1,2 @@
-hardware-configurationEXTRA.nix
-configurationBAK.nix
+./.[disabled]original_configuration.nix
+./.[disabled]bazznix-hardware-configuration.nix

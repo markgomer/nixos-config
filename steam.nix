@@ -4,7 +4,7 @@
   programs.steam.package = pkgs.steam.override {
     extraPkgs = pkgs:
       with pkgs; [
-      xorg.libXcursor
+        xorg.libXcursor
         xorg.libXi
         xorg.libXinerama
         xorg.libXScrnSaver

@@ -16,24 +16,23 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
-          ./custom-kernel.nix
+          ./hosts/avell
           ### Uncomment only one below
-          ./DE/xfce.nix
+          ./desktop-environment
           # ./DE/kde.nix
           ###
-          ./bluetooth.nix
           ./steam.nix
           ./system-packages.nix
+          ./display-manager
           home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.majunior = import ./home.nix;
+            home-manager.users.majunior = import ./home/majunior/home.nix;
           }
         ];
       };
     };
   };
-      # Optionally, use home-manager.extraSpecialArgs to pass
-      # arguments to home.nix
+# Optionally, use home-manager.extraSpecialArgs to pass
+# arguments to home.nix
 }
