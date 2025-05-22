@@ -7,7 +7,7 @@
     wget
     vim
     linuxKernel.packages.linux_6_6.cpupower
-    intel-undervolt
+    undervolt
     git
     btop
     alacritty
