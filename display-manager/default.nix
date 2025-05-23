@@ -1,7 +1,7 @@
 {
   imports = [
-    # ./lightdm.nix
+    ./lightdm.nix
     #./sddm.nix
-    ./gdm.nix
+    # ./gdm.nix
   ];
 }

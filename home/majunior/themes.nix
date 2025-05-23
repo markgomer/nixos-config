@@ -3,7 +3,7 @@
     gtk.enable = true;
     x11.enable = true;
     package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
+    name = "elementary";
     size = 16;
   };
 
@@ -27,10 +27,5 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
-  };
-
-  dconf = {
-    enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 }

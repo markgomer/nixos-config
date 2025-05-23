@@ -1,25 +1,25 @@
 { config, ... }: {
   boot = {
     initrd.kernelModules = [ ];
-    kernelModules = [ "nvidia" "nvidia_drm" "i915" ];
+    kernelModules = [ "nvidia" "nvidia_drm" "nvidia_modeset" "i915" ];
     kernelParams = [
       "rhgb"
       "rw"
-      "bluetooth.disable_ertm=1"
       "preempt=full"
       "rd.driver.blacklist=nouveau"
       "modprobe.blacklist=nouveau"
-      "nvidia-drm.modeset=1"
       "acpi_osi=Linux"
       "acpi_osi=\"!Windows 2015\""
       "mem_sleep_default=deep"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "nvidia-drm.modeset=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=0"
       "nvidia.NVreg_TemporaryFilePath=/var/tmp"
-      "nvidia.NVreg_DynamicPowerManagement=0x00"
+      "nvidia.NVreg_DynamicPowerManagement=0x01"
+      "bluetooth.disable_ertm=1"
+      "i915.enable_guc=2"
+      "i915.enable_fbc=1"
+      "i915.enable_psr=2"
       "i8042.dumbkbd=1"
-      # "i915.enable_guc=2"
-      # "i915.enable_fbc=1"
-      # "i915.enable_psr=2"
     ];
     blacklistedKernelModules = [ "nouveau" ];
     extraModprobeConfig = ''
@@ -40,7 +40,7 @@
       # Enable this if you have graphical corruption issues or application crashes after waking
       # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
       # of just the bare essentials.
-      powerManagement.enable = false;
+      powerManagement.enable = true;
       prime = {
         offload = {
           enable = true;
