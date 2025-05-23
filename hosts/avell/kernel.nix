@@ -13,7 +13,7 @@
       "acpi_osi=Linux"
       "acpi_osi=\"!Windows 2015\""
       "mem_sleep_default=deep"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=0"
       "nvidia.NVreg_TemporaryFilePath=/var/tmp"
       "nvidia.NVreg_DynamicPowerManagement=0x00"
       "i8042.dumbkbd=1"
@@ -43,7 +43,7 @@
       powerManagement.enable = false;
       prime = {
         offload = {
-          enable = true;
+          enable = false;
         };
         # integrated
         intelBusId = "PCI:00:02:0";
