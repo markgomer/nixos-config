@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   environment = {
     systemPackages = with pkgs; [
       blueman
@@ -73,7 +71,9 @@
 
   services = {
     blueman.enable = true;
+
     gnome.gnome-keyring.enable = true;
+
     pipewire = {
       enable = true;
       alsa = {
@@ -82,12 +82,21 @@
       };
       pulse.enable = true;
     };
+
     xserver = {
       enable = true;
       excludePackages = with pkgs; [
         xterm
       ];
       desktopManager.xfce.enable = true;
+    };
+
+    picom = {
+      enable = false;
+      fade = true;
+      inactiveOpacity = 0.9;
+      shadow = true;
+      fadeDelta = 4;
     };
   };
 

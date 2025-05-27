@@ -4,7 +4,7 @@
   imports = [
     ./xfce-home.nix
     # ./hyprland-home.nix
-    ./themes.nix
+    ./gtk-themes.nix
   ];
 
   home = {
