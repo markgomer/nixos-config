@@ -1,2 +1,1 @@
-./.[disabled]original_configuration.nix
-./.[disabled]bazznix-hardware-configuration.nix
+.session.vim
