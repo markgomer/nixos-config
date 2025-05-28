@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  programs.gamemode.enable = false;
+  programs.gamemode.enable = true;
   programs.steam.enable = true;
   programs.steam.package = pkgs.steam.override {
     extraPkgs = pkgs:
