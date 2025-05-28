@@ -42,6 +42,7 @@
       nlg = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
       ngc = "nix-collect-garbage";
       nso = "nix-store --optmise";
+      update = "cd $HOME/.config/nixos-config && nix flake update";
       ecf = "lvim $HOME/.config/nixos-config/flake.nix";
       sv = "$HOME/.local/scripts/powersave.sh";
       eq = "$HOME/.local/scripts/equilibrado.sh";
