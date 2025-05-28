@@ -1,8 +1,11 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;   # required for many Steam games (32-bit Vulkan/OpenGL)
+      extraPackages = [
+        pkgs.intel-vaapi-driver
+      ];
     };
 
     nvidia = {

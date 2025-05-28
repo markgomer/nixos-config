@@ -18,6 +18,7 @@
       "nvidia.NVreg_PreserveVideoMemoryAllocations=0"
       "nvidia.NVreg_TemporaryFilePath=/var/tmp"
       "nvidia.NVreg_DynamicPowerManagement=0x01"
+      "nvidia.NVreg_RegistryDwords=\"PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerLevel=0x3\""
       "bluetooth.disable_ertm=1"
       "i915.enable_guc=2"
       "i915.enable_fbc=1"
