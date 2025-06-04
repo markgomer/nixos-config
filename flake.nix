@@ -1,37 +1,41 @@
 {
-  description = "Nixos config flake";
-
+  description = "KooL's NixOS-Hyprland"; 
+  	
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11"; # /nixos-unstable
+    
+    #hyprland.url = "github:hyprwm/Hyprland"; # hyprland development
+    #distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+    ags.url = "github:aylur/ags/v1"; # aylurs-gtk-shell-v1
+ 	};
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  outputs = 
+    inputs@{ self, nixpkgs, ... }:
+    let
+      system = "x86_64-linux";
+      host = "avell";
+      username = "majunior";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-  };
-
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
-    nixosConfigurations = {
-      avell-nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/avell
-          ./desktop-environment
-          ./steam.nix
-          ./system-packages.nix
-          ./display-manager
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.majunior = import ./home/majunior/home.nix;
-          }
-        ];
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
+        };
       };
-    };
-  };
-  # Optionally, use home-manager.extraSpecialArgs to pass
-  # arguments to home.nix
+    in {
+      nixosConfigurations = {
+        "${host}" = nixpkgs.lib.nixosSystem rec {
+          specialArgs = { 
+            inherit system;
+            inherit inputs;
+            inherit username;
+            inherit host;
+          };
+          modules = [ 
+            ./hosts/${host}
+            # inputs.distro-grub-themes.nixosModules.${system}.default
+            ];
+          };
+        };
+      };
 }

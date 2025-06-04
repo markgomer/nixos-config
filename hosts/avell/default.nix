@@ -1,10 +1,9 @@
 {
   imports = [
-    ./hardware-configuration.nix
-    ./hardware.nix
-    ./kernel.nix
-    ./configuration.nix
-    ./undervolt.nix
-    ./bluetooth.nix
+    ./hw-modules
+    ./system-config
+
+    ./users.nix
+    ./packages-fonts.nix
   ];
 }
