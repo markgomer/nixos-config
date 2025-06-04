@@ -15,6 +15,7 @@
       system = "x86_64-linux";
       host = "avell";
       username = "majunior";
+      systemStateVersion = "24.11";
 
       pkgs = import nixpkgs {
         inherit system;

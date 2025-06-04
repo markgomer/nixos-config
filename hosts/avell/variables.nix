@@ -2,6 +2,8 @@
 # Variables
 
 {
+  userName = "majunior";
+
   gitUsername = "markgomer";
   gitEmail = "aureliojuniorcmrj@hotmail.com";
 
