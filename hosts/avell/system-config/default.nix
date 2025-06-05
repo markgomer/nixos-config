@@ -7,6 +7,7 @@
     ./nix.nix
     ./security.nix
     ./services.nix
+    ./virtualisation.nix
   ];
 
   # This value determines the NixOS release from which the default
