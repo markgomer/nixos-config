@@ -27,18 +27,23 @@ in
 
       # define user packages here
       packages = with pkgs; [
+        bat
+        eza
         lunarvim
         ripgrep
         asdf-vm
         lazygit
       ];
     };
-    
+
     defaultUserShell = pkgs.zsh;
   }; 
-  
+
   environment.shells = with pkgs; [ zsh ];
-  environment.systemPackages = with pkgs; [ lsd fzf ]; 
+  environment.systemPackages = with pkgs; [
+    lsd
+    fzf
+  ]; 
     
   programs = {
     # Zsh configuration
@@ -73,7 +78,6 @@ in
       '';
 
       shellAliases = {
-        cat = "bat";
         ls = "eza --icons=always";
 
         fullClean = '' 
